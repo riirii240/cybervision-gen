@@ -1,0 +1,406 @@
+{
+  "side": 8,
+  "pad_value": 0.0,
+  "n_features": 63,
+  "features": [
+    "flow_duration",
+    "flow_bytes_s",
+    "flow_packets_s",
+    "down_up_ratio",
+    "average_packet_size",
+    "total_fwd_packets",
+    "total_length_of_fwd_packets",
+    "fwd_packet_length_max",
+    "fwd_packet_length_min",
+    "fwd_packet_length_mean",
+    "fwd_packet_length_std",
+    "fwd_header_length",
+    "fwd_packets_s",
+    "avg_fwd_segment_size",
+    "subflow_fwd_bytes",
+    "init_win_bytes_forward",
+    "act_data_pkt_fwd",
+    "min_seg_size_forward",
+    "total_backward_packets",
+    "total_length_of_bwd_packets",
+    "bwd_packet_length_max",
+    "bwd_packet_length_min",
+    "bwd_packet_length_mean",
+    "bwd_packet_length_std",
+    "bwd_header_length",
+    "bwd_packets_s",
+    "avg_bwd_segment_size",
+    "subflow_bwd_bytes",
+    "init_win_bytes_backward",
+    "min_packet_length",
+    "max_packet_length",
+    "packet_length_mean",
+    "packet_length_std",
+    "packet_length_variance",
+    "flow_iat_mean",
+    "flow_iat_std",
+    "flow_iat_max",
+    "flow_iat_min",
+    "fwd_iat_total",
+    "fwd_iat_mean",
+    "fwd_iat_std",
+    "fwd_iat_max",
+    "fwd_iat_min",
+    "bwd_iat_total",
+    "bwd_iat_mean",
+    "bwd_iat_std",
+    "bwd_iat_max",
+    "bwd_iat_min",
+    "fwd_psh_flags",
+    "fwd_urg_flags",
+    "fin_flag_count",
+    "rst_flag_count",
+    "psh_flag_count",
+    "ack_flag_count",
+    "urg_flag_count",
+    "active_mean",
+    "active_std",
+    "active_max",
+    "active_min",
+    "idle_mean",
+    "idle_std",
+    "idle_max",
+    "idle_min"
+  ],
+  "cells": {
+    "flow_duration": [
+      0,
+      0
+    ],
+    "flow_bytes_s": [
+      0,
+      1
+    ],
+    "flow_packets_s": [
+      0,
+      2
+    ],
+    "down_up_ratio": [
+      0,
+      3
+    ],
+    "average_packet_size": [
+      0,
+      4
+    ],
+    "total_fwd_packets": [
+      0,
+      5
+    ],
+    "total_length_of_fwd_packets": [
+      0,
+      6
+    ],
+    "fwd_packet_length_max": [
+      0,
+      7
+    ],
+    "fwd_packet_length_min": [
+      1,
+      0
+    ],
+    "fwd_packet_length_mean": [
+      1,
+      1
+    ],
+    "fwd_packet_length_std": [
+      1,
+      2
+    ],
+    "fwd_header_length": [
+      1,
+      3
+    ],
+    "fwd_packets_s": [
+      1,
+      4
+    ],
+    "avg_fwd_segment_size": [
+      1,
+      5
+    ],
+    "subflow_fwd_bytes": [
+      1,
+      6
+    ],
+    "init_win_bytes_forward": [
+      1,
+      7
+    ],
+    "act_data_pkt_fwd": [
+      2,
+      0
+    ],
+    "min_seg_size_forward": [
+      2,
+      1
+    ],
+    "total_backward_packets": [
+      2,
+      2
+    ],
+    "total_length_of_bwd_packets": [
+      2,
+      3
+    ],
+    "bwd_packet_length_max": [
+      2,
+      4
+    ],
+    "bwd_packet_length_min": [
+      2,
+      5
+    ],
+    "bwd_packet_length_mean": [
+      2,
+      6
+    ],
+    "bwd_packet_length_std": [
+      2,
+      7
+    ],
+    "bwd_header_length": [
+      3,
+      0
+    ],
+    "bwd_packets_s": [
+      3,
+      1
+    ],
+    "avg_bwd_segment_size": [
+      3,
+      2
+    ],
+    "subflow_bwd_bytes": [
+      3,
+      3
+    ],
+    "init_win_bytes_backward": [
+      3,
+      4
+    ],
+    "min_packet_length": [
+      3,
+      5
+    ],
+    "max_packet_length": [
+      3,
+      6
+    ],
+    "packet_length_mean": [
+      3,
+      7
+    ],
+    "packet_length_std": [
+      4,
+      0
+    ],
+    "packet_length_variance": [
+      4,
+      1
+    ],
+    "flow_iat_mean": [
+      4,
+      2
+    ],
+    "flow_iat_std": [
+      4,
+      3
+    ],
+    "flow_iat_max": [
+      4,
+      4
+    ],
+    "flow_iat_min": [
+      4,
+      5
+    ],
+    "fwd_iat_total": [
+      4,
+      6
+    ],
+    "fwd_iat_mean": [
+      4,
+      7
+    ],
+    "fwd_iat_std": [
+      5,
+      0
+    ],
+    "fwd_iat_max": [
+      5,
+      1
+    ],
+    "fwd_iat_min": [
+      5,
+      2
+    ],
+    "bwd_iat_total": [
+      5,
+      3
+    ],
+    "bwd_iat_mean": [
+      5,
+      4
+    ],
+    "bwd_iat_std": [
+      5,
+      5
+    ],
+    "bwd_iat_max": [
+      5,
+      6
+    ],
+    "bwd_iat_min": [
+      5,
+      7
+    ],
+    "fwd_psh_flags": [
+      6,
+      0
+    ],
+    "fwd_urg_flags": [
+      6,
+      1
+    ],
+    "fin_flag_count": [
+      6,
+      2
+    ],
+    "rst_flag_count": [
+      6,
+      3
+    ],
+    "psh_flag_count": [
+      6,
+      4
+    ],
+    "ack_flag_count": [
+      6,
+      5
+    ],
+    "urg_flag_count": [
+      6,
+      6
+    ],
+    "active_mean": [
+      6,
+      7
+    ],
+    "active_std": [
+      7,
+      0
+    ],
+    "active_max": [
+      7,
+      1
+    ],
+    "active_min": [
+      7,
+      2
+    ],
+    "idle_mean": [
+      7,
+      3
+    ],
+    "idle_std": [
+      7,
+      4
+    ],
+    "idle_max": [
+      7,
+      5
+    ],
+    "idle_min": [
+      7,
+      6
+    ]
+  },
+  "mask": [
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ]
+  ]
+}

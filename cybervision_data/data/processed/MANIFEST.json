@@ -1,0 +1,11 @@
+{
+  "config_sha256": "edbe8e861e65af4cade644482453fe7740aa10955cd7a046c46aa2ea2ce96895",
+  "files_sha256": {
+    "splits/train_ids.csv.gz": "dff8df8da54994f0853fed8b08d6c3fdf090b55f13f45c171eaafa24c88bb4ad",
+    "splits/val_ids.csv.gz": "cbe066165b0a2440b40d4e006042cf9b0ed6688eeb928c7e7f1b8a5d7f537a07",
+    "splits/test_ids.csv.gz": "263bd65a6cad193a1e03aa962f9307ade2f07f171238974ce04775fc3b36d65a",
+    "splits/reduced/train_frac0.01_ids.csv.gz": "82c9b6e4175d3b13be51661ed8dc17480f864a046d8cd5683825971e1cbe5f4c",
+    "splits/reduced/train_frac0.05_ids.csv.gz": "4ea0b0ea10a43d04db52df76fbb36402b4bed677dbeceaa6cf7c65ba4ec93606",
+    "splits/reduced/train_frac0.1_ids.csv.gz": "507dff478c62075da2c8f37a38f255d48bcd28dacd851a183a0a41ae5b23fe1d"
+  }
+}
