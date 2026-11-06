@@ -1,0 +1,89 @@
+# =====================================================================
+# CyberVision Gen — Configuration du pipeline de données (Personne 1)
+# Toute décision de protocole est ici : c'est ce fichier (versionné)
+# qui fige les partitions. Ne pas le modifier après la génération.
+# =====================================================================
+
+seed: 42
+
+paths:
+  raw_dir: data/raw              # CSV CIC-IDS2017 (ne PAS committer)
+  interim_dir: data/interim
+  processed_dir: data/processed
+  artifacts_dir: artifacts       # scaler, schéma, layout 8x8, seuils
+  reports_dir: reports           # figures, audit, data card
+
+# ---------------------------------------------------------------------
+# Source des données
+#   "traffic_labelling" : CSV originaux GeneratedLabelledFlows (avec Timestamp)  <- recommandé
+#   "wtmc2021"          : version corrigée Engelen et al. (2021)                  <- recommandé si dispo
+#   "ml_cve"            : MachineLearningCVE (PAS de Timestamp -> repli sur l'ordre des lignes)
+# ---------------------------------------------------------------------
+source:
+  flavor: traffic_labelling
+  file_glob: "*.csv"
+  encoding: latin-1
+  fix_12h_clock: auto            # auto : corrige les heures d'après-midi écrites 1:00..7:59
+  workday_start_hour: 8
+
+cleaning:
+  negative_policy: drop          # drop | clip  (valeurs négatives impossibles)
+  sentinel_features:             # -1 = "non observé" : légitime, conservé
+    - init_win_bytes_forward
+    - init_win_bytes_backward
+  attempted_policy: drop         # wtmc2021 : drop | benign | keep  (labels "... - Attempted")
+
+classes:
+  # Regroupement : on partitionne d'abord par label ORIGINAL (fenêtres temporelles
+  # distinctes) puis on renomme -> chaque sous-attaque est présente dans chaque split.
+  groups:
+    Web Attack:
+      - Web Attack - Brute Force
+      - Web Attack - XSS
+      - Web Attack - Sql Injection
+  exclude:
+    - Heartbleed
+    - Infiltration
+    - Infiltration - Portscan
+  min_class_count: 1000          # après dédoublonnage et regroupement
+
+split:
+  fractions: [0.70, 0.15, 0.15]  # train / val / test, DANS chaque fenêtre (jour, label original)
+  align_to_timestamp: true       # aucun timestamp identique de part et d'autre d'une coupure
+  gap_fraction: 0.0              # option : "embargo" supprimé autour des coupures (ex. 0.01)
+
+features:
+  max_features: 64
+  drop_columns:                  # identifiants / raccourcis / méta (noms normalisés)
+    - flow_id
+    - source_ip
+    - destination_ip
+    - source_port
+    - destination_port
+    - protocol
+    - timestamp
+    - id
+  corr_threshold: 0.99           # élagage SEULEMENT si > max_features après étapes déterministes
+  corr_sample: 200000
+  protect_constraint_groups: true
+
+scaling:
+  log_transform: nonbinary       # nonbinary | auto | none   (log1p signé)
+  skew_threshold: 2.0            # utilisé si log_transform = auto
+  range: [-1.0, 1.0]             # cohérent avec une sortie tanh du générateur
+
+matrix:
+  side: 8
+  pad_value: 0.0
+
+reduced_regime:                  # régime de données réduites (protocole commun)
+  fractions: [0.01, 0.05, 0.10]  # emboîtés : 1% ⊂ 5% ⊂ 10%
+  classes: minority              # minority | all | [liste explicite]
+  min_per_class: 20
+  benign_cap: 200000             # BENIGN plafonné dans le train réduit (null = pas de plafond)
+
+audit:
+  nn_cap_train: 20000
+  nn_cap_eval: 5000
+  near_dup_percentile: 1.0       # seuil τ = 1er centile des distances val -> train
+  constraint_reliable_max_violation: 0.01

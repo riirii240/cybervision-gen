@@ -1,0 +1,25 @@
+# ---- Données : JAMAIS dans Git (licence CIC + taille). Elles vivent sur Google Drive. ----
+**/data/raw/
+**/data/interim/
+**/data/processed/*.parquet
+*.csv
+!**/splits/**/*.csv.gz
+*.pcap
+*.zip
+
+# ---- Modèles lourds (sur Drive) ----
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+**/artifacts/*.joblib
+
+# ---- Python / Jupyter / éditeurs ----
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+.env
+.DS_Store

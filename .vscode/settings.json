@@ -1,0 +1,8 @@
+{
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["cybervision_data/tests"],
+  "jupyter.notebookFileRoot": "${workspaceFolder}/cybervision_data",
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "notebook.output.textLineLimit": 50
+}
