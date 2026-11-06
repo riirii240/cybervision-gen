@@ -1,0 +1,1 @@
+Contrôle de sens (RF, 100 arbres, 300 000 flux du train, validation) : macro-F1 = 0,834. Classes difficiles : PortScan (F1 0,127, précision 0,068), Bot (0,511), DoS Slowhttptest (0,636). Aucune classe à 1,000, donc pas de signe de fuite. Classes cibles proposées pour le GAN : PortScan, Bot, DoS Slowhttptest (+ Web Attack si l’équipe veut 4 classes).

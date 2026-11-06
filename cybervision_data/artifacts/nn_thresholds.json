@@ -1,0 +1,18 @@
+{
+  "space": "scaled [-1,1]",
+  "metric": "euclidean",
+  "rule": "percentile 1.0 des distances val->train",
+  "tau_per_class": {
+    "BENIGN": 0.0006993981439154596,
+    "Bot": 0.0027935865218751132,
+    "DDoS": 0.00014034890118637123,
+    "DoS GoldenEye": 0.0016588594065979124,
+    "DoS Hulk": 0.004856699961237609,
+    "DoS Slowhttptest": 1.1920928955078125e-07,
+    "DoS slowloris": 0.0,
+    "FTP-Patator": 0.0017998763569630682,
+    "PortScan": 0.00011747813608963043,
+    "SSH-Patator": 0.0031458656303584576,
+    "Web Attack": 0.0002886652946472168
+  }
+}
