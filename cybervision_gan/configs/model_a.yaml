@@ -1,0 +1,39 @@
+project:
+  name: cybervision-wgan-gp-model-a
+  seed: 42
+  priority_classes:
+    - PortScan
+    - Bot
+    - DoS Slowhttptest
+
+paths:
+  processed_dir: cybervision_data/data/processed
+  artifacts_dir: cybervision_data/artifacts
+  checkpoint_dir: outputs/model_a/checkpoints
+  export_dir: outputs/model_a/generated
+
+model:
+  latent_dim: 128
+  n_classes: 11
+  n_features: 63
+  embedding_dim: 32
+  generator_hidden_dims: [256, 512, 512]
+  critic_hidden_dims: [512, 512, 256]
+
+training:
+  epochs: 100
+  batch_size: 512
+  n_critic: 5
+  gp_weight: 10.0
+  lr_g: 0.0001
+  lr_c: 0.0001
+  betas: [0.0, 0.9]
+  balanced_sampling: true
+  num_workers: 2
+  checkpoint_every: 10
+  validation_batches: 50
+  smoke_batches: 5
+
+generation:
+  samples_per_priority_class: 5000
+  batch_size: 4096
