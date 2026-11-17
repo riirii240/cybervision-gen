@@ -13,6 +13,7 @@
 *.ckpt
 checkpoints/
 **/artifacts/*.joblib
+cybervision_gan/outputs/
 
 # ---- Python / Jupyter / éditeurs ----
 __pycache__/
