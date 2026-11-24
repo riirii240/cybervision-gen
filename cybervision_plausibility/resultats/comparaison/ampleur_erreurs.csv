@@ -1,0 +1,5 @@
+jeu,total_len_fwd=n_fwd*mean_fwd,total_len_bwd=n_bwd*mean_bwd,pkt_len_var=pkt_len_std^2
+Réel (train),0.000000,0.000000,0.000000
+A,0.397043,0.332696,0.432739
+B,0.236043,0.250348,0.335652
+C,0.282304,0.265087,0.332391
